@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "optimizeImages": "node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",

@@ -6,11 +6,20 @@ const inputDirectoryPath = path.join(__dirname, './input')
 const outputDirectoryPath = path.join(__dirname, './output')
 const processedDirecoryPath = path.join(__dirname, './processed')
 
+if (!fs.existsSync(inputDirectoryPath)) {
+  fs.mkdirSync(inputDirectoryPath)
+}
+if (!fs.existsSync(outputDirectoryPath)) {
+  fs.mkdirSync(outputDirectoryPath)
+}
+if (!fs.existsSync(processedDirecoryPath)) {
+  fs.mkdirSync(processedDirecoryPath)
+}
+
 async function run() {
   const files = await fs.promises.readdir(inputDirectoryPath)
   await Promise.all(
     files
-      .filter((file) => /^org-portrait--/.test(file))
       .map(async (file) => {
         console.log(file)
         const inputImagePath = path.join(inputDirectoryPath, file)
