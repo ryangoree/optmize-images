@@ -6,9 +6,6 @@ const inputDirectoryPath = path.join(__dirname, './input')
 const outputDirectoryPath = path.join(__dirname, './output')
 const processedDirecoryPath = path.join(__dirname, './processed')
 
-if (!fs.existsSync(inputDirectoryPath)) {
-  fs.mkdirSync(inputDirectoryPath)
-}
 if (!fs.existsSync(outputDirectoryPath)) {
   fs.mkdirSync(outputDirectoryPath)
 }
